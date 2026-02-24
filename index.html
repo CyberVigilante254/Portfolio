@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Web | Creative Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="logo">VAN<span>GUARD</span></div>
+        
+        <nav class="nav-links" id="navLinks">
+            <a href="#work" onclick="toggleMenu()">Work</a>
+            <a href="#services" onclick="toggleMenu()">Services</a>
+            <a href="#contact" class="nav-cta" onclick="toggleMenu()">Let's Talk</a>
+        </nav>
+
+        <div class="menu-icon" id="menuBtn" onclick="toggleMenu()">
+            <i data-lucide="menu"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Available for Work</span>
+                <h1>I Build Digital <br><span class="highlight">Masterpieces.</span></h1>
+                <p>Elevating brands through clean code and bold aesthetics. Your vision, expertly developed on mobile and desktop.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Start a Project</a>
+                    <a href="#work" class="btn-secondary">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="portfolio">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800')"></div>
+                    <div class="card-info">
+                        <h3>Aura Luxe</h3>
+                        <p>E-commerce / Fashion</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800')"></div>
+                    <div class="card-info">
+                        <h3>Fintech OS</h3>
+                        <p>Dashboard / UI-UX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-card">
+                <h2>Let's Collaborate</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                    <button type="submit" class="btn-primary full-width">Send Message</button>
+                </form>
+                <div id="formFeedback" class="hidden">
+                    <i data-lucide="check-circle" style="color: var(--accent-green)"></i>
+                    <p>Thanks! I'll be in touch soon. ✨</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vanguard Web Dev. Built in Acode.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
