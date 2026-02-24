@@ -1,0 +1,164 @@
+:root {
+    --bg-dark: #0f172a;      
+    --bg-card: #1e293b;
+    --accent-gold: #fbbf24;  
+    --accent-green: #059669; 
+    --text-light: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background-color: var(--bg-dark); 
+    color: var(--text-light);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 5%; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+    backdrop-filter: blur(12px); 
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--accent-gold); }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-gold); }
+
+.nav-cta {
+    background: var(--accent-gold);
+    color: var(--bg-dark) !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 5%;
+    background: radial-gradient(circle at top right, rgba(5, 150, 105, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.1), transparent);
+}
+
+.badge {
+    background: rgba(5, 150, 105, 0.2); 
+    color: var(--accent-green); 
+    padding: 6px 14px;
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+    border: 1px solid var(--accent-green);
+}
+
+h1 { font-size: 3rem; line-height: 1.1; margin: 20px 0; }
+.highlight { color: var(--accent-gold); }
+.hero p { max-width: 500px; color: #94a3b8; font-size: 1.1rem; }
+
+.hero-btns { display: flex; gap: 15px; margin-top: 35px; }
+
+.btn-primary {
+    background: var(--accent-gold); 
+    color: var(--bg-dark);
+    padding: 14px 28px; 
+    border-radius: 8px; 
+    text-decoration: none;
+    font-weight: bold; 
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2); 
+    color: white;
+    padding: 14px 28px; 
+    border-radius: 8px; 
+    text-decoration: none;
+}
+
+/* Portfolio */
+.portfolio { padding: 100px 5%; }
+.section-title { margin-bottom: 40px; font-size: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+.project-card {
+    background: var(--bg-card); 
+    border-radius: 15px; 
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover { transform: translateY(-10px); }
+.card-img { height: 220px; background-size: cover; background-position: center; }
+.card-info { padding: 20px; }
+.card-info p { color: var(--accent-gold); font-size: 0.9rem; margin-top: 5px; }
+
+/* Contact */
+.contact-section { padding: 100px 5%; background: #0b1120; }
+.contact-card { 
+    max-width: 500px; 
+    margin: 0 auto; 
+    background: var(--glass); 
+    padding: 40px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+input, textarea {
+    width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 8px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    color: white; outline: none; font-size: 1rem;
+}
+
+input:focus { border-color: var(--accent-gold); }
+
+.full-width { width: 100%; }
+
+/* Mobile Menu Logic */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        height: 100vh; width: 80%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease;
+        z-index: 999;
+        border-left: 1px solid var(--accent-gold);
+    }
+
+    .nav-links.active { right: 0; }
+    .menu-icon { display: block; cursor: pointer; color: var(--accent-gold); }
+}
+
+@media (min-width: 769px) {
+    .menu-icon { display: none; }
+}
+
+.hidden { display: none; }
+footer { text-align: center; padding: 40px; color: #475569; font-size: 0.8rem; }
