@@ -37,4 +37,4 @@ This project was developed entirely using **Acode**, demonstrating a highly effi
 
 ---
 
-**Developed with precision by [Your Name/Handle]**
+**Developed with precision by Collins Chele**
